@@ -1,0 +1,6 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ADD my-app-1.0-SNAPSHOT.jar my-app.jar
+EXPOSE 9350
+RUN echo 'Asia/Shanghai' >/etc/timezone
+ENTRYPOINT ["java","-jar","/my-app.jar"]
